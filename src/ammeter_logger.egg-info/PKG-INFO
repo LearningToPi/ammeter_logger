@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: ammeter-logger
+Version: 0.1.0
+Summary: Ammeter logging tool - used to receive from micropython serial connection
+Home-page: https://github.com/learningtopi/ammeter_logger
+Author: Thomas Dunteman
+Author-email: ammeter@learningtopi.com
+Project-URL: Bug Tracker, https://github.com/learningtopi/ammeter_logger/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Linux
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
