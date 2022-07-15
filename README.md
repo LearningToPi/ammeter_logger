@@ -8,6 +8,12 @@ This Python module works with the [Micropython ADC Amperage Monitor](https://git
 
 The module can be run of the command line or imported into other projects to record amperage data.
 
+## Installation
+The package is available on PyPi or can be installed manually using the why/tar.gz file in the dist folder.
+
+    pip3 install ammeter_logger
+
+
 ## CLI Usage
 
     (venv) $ python3 -m ammeter_logger 
