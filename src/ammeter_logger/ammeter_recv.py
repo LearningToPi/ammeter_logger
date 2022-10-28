@@ -5,6 +5,7 @@ import serial
 import logging
 from time import sleep, time
 from threading import Thread, Lock
+from ast import literal_eval
 
 
 class AmmeterRecvSerial(serial.Serial):
@@ -96,7 +97,7 @@ class AmmeterRecvSerial(serial.Serial):
     @property
     def ammeter_interval(self):
         """ Return the current sampling interval """
-        config = self.ammeter_config()
+        config = self.ammeter_config
         return config['interval']
 
     @ammeter_interval.setter
@@ -179,10 +180,10 @@ class AmmeterRecvSerial(serial.Serial):
                     self.ammeter_data.append({
                         'received': time(),
                         'name': response[1],
-                        'ticks': response[2],
-                        'current_amps': response[3],
-                        'last_reads': response[4],
-                        'average': response[5]
+                        'ticks': int(response[2]),
+                        'current_amps': float(response[3]),
+                        'last_reads': literal_eval(response[4]),
+                        'average': float(response[5])
                     })
                 return True
             else:
