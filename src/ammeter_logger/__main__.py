@@ -13,7 +13,7 @@ def write_log_data(serial_device:AmmeterRecvSerial, args:dict):
     with open(args['file'], 'w', encoding='utf-8') as output_file:
         writer = csv.writer(output_file)
         header = ['received_epoch', 'name', 'received_datetime', 'ticks', 'latest']
-        for x in range(len(json.loads(serial_device.ammeter_data[0]['last_reads']))):
+        for x in range(len(serial_device.ammeter_data[0]['last_reads'])):
             header.append(f'read_{x+1}')
         header.append('time_from_start')
         header.append('average')
@@ -25,9 +25,8 @@ def write_log_data(serial_device:AmmeterRecvSerial, args:dict):
                 datetime.fromtimestamp(record['received']).strftime('%Y-%m-%d %H:%M:%S.%f'),
                 record['ticks'], 
                 record['current_amps']]
-            last_read_json = json.loads(record['last_reads'])
-            for x in range(len(last_read_json)):
-                row.append(last_read_json[x])
+            for x in range(len(record['last_reads'])):
+                row.append(record['last_reads'][x])
             row.append(float(record['ticks'])/1000)
             row.append(record['average'])
             writer.writerow(row)
