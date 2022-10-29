@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="ammeter_logger",
-    version="0.1.1",
+    version="0.1.2",
     author="Thomas Dunteman",
     author_email="ammeter@learningtopi.com",
     description="Ammeter logging tool - used to receive from micropython serial connection",

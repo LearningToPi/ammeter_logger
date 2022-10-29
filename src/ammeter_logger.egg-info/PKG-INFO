@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: ammeter-logger
-Version: 0.1.1
+Version: 0.1.2
 Summary: Ammeter logging tool - used to receive from micropython serial connection
 Home-page: https://github.com/learningtopi/ammeter_logger
 Author: Thomas Dunteman
